@@ -1,0 +1,72 @@
+export interface Advogado {
+  id: string;
+  nome: string;
+  cpf: string;
+  email: string;
+}
+
+export interface Movimentacao {
+  id: string;
+  descricao: string;
+  data: string;
+  advogado: string;
+}
+
+export interface Cliente {
+  id: string;
+  nome: string;
+  cpf: string;
+  senhaINSS: string;
+  beneficioDesejado: string;
+  movimentacoes: Movimentacao[];
+}
+
+export const advogadosMock: Advogado[] = [
+  { id: "1", nome: "Dr. Carlos Mendes", cpf: "123.456.789-00", email: "carlos@escritorio.com" },
+  { id: "2", nome: "Dra. Ana Beatriz Silva", cpf: "987.654.321-00", email: "ana@escritorio.com" },
+  { id: "3", nome: "Dr. Roberto Almeida", cpf: "456.789.123-00", email: "roberto@escritorio.com" },
+];
+
+export const clientesMock: Cliente[] = [
+  {
+    id: "1",
+    nome: "Maria da Silva Santos",
+    cpf: "111.222.333-44",
+    senhaINSS: "abc12345",
+    beneficioDesejado: "Aposentadoria por Idade",
+    movimentacoes: [
+      { id: "m1", descricao: "Protocolo inicial realizado junto ao INSS", data: "2024-01-15", advogado: "Dr. Carlos Mendes" },
+      { id: "m2", descricao: "Juntada de documentos complementares", data: "2024-02-20", advogado: "Dra. Ana Beatriz Silva" },
+      { id: "m3", descricao: "Perícia médica agendada para 15/04/2024", data: "2024-03-10", advogado: "Dr. Carlos Mendes" },
+    ],
+  },
+  {
+    id: "2",
+    nome: "José Pereira de Oliveira",
+    cpf: "555.666.777-88",
+    senhaINSS: "xyz98765",
+    beneficioDesejado: "Auxílio-Doença",
+    movimentacoes: [
+      { id: "m4", descricao: "Consulta inicial e análise de documentação", data: "2024-03-01", advogado: "Dr. Roberto Almeida" },
+      { id: "m5", descricao: "Requerimento administrativo protocolado", data: "2024-03-15", advogado: "Dr. Roberto Almeida" },
+    ],
+  },
+  {
+    id: "3",
+    nome: "Ana Carolina Ferreira",
+    cpf: "999.888.777-66",
+    senhaINSS: "fer2024",
+    beneficioDesejado: "BPC/LOAS",
+    movimentacoes: [
+      { id: "m6", descricao: "Cadastro no CadÚnico verificado", data: "2024-02-10", advogado: "Dra. Ana Beatriz Silva" },
+    ],
+  },
+  {
+    id: "4",
+    nome: "Francisco Alves Costa",
+    cpf: "333.444.555-66",
+    senhaINSS: "fac2023",
+    beneficioDesejado: "Aposentadoria por Invalidez",
+    movimentacoes: [],
+  },
+];
